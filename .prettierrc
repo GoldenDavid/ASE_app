@@ -1,0 +1,13 @@
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "semi": false,
+  "useTabs": false,
+  "singleQuote": false,
+  "htmlWhitespaceSensitivity": "css",
+  "quoteProps": "as-needed",
+  "endOfLine": "lf",
+  "arrowParens": "avoid",
+  "jsxSingleQuote": false
+}
