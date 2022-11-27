@@ -85,6 +85,9 @@ export default function Sidebar({ handleClickGroupTag }) {
         },
         ".css-12i7wg6-MuiPaper-root-MuiDrawer-paper": {
           top: "auto"
+        },
+        ".css-1l8j5k8": {
+          top: "auto"
         }
       }}
       variant="permanent"

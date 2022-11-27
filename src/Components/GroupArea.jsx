@@ -71,6 +71,9 @@ function GroupArea({ group }) {
         },
         ".css-18sg6k4-MuiPaper-root-MuiDrawer-paper": {
           top: "auto"
+        },
+        ".css-1ciwpa8": {
+          top: "auto"
         }
       }}
       variant="permanent"
