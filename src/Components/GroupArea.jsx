@@ -30,16 +30,16 @@ function GroupArea({ group }) {
       </Typography>
       <List>
         <ListItem key={group.owner} disablePadding>
-          <ListItemText primary={group.owner} />
+          <ListItemText primary={group.owner.name} />
         </ListItem>
       </List>
       <Typography variant="h6" align="center">
         *Co-owner:
       </Typography>
       <List>
-        {group.co_owners.map(name => (
-          <ListItem key={name} disablePadding>
-            <ListItemText primary={name} />
+        {group.co_owners.map(CoOwner => (
+          <ListItem key={CoOwner.userId} disablePadding>
+            <ListItemText primary={CoOwner.name} />
           </ListItem>
         ))}
       </List>
@@ -47,9 +47,9 @@ function GroupArea({ group }) {
         *Member:
       </Typography>
       <List>
-        {group.members.map(name => (
-          <ListItem key={name} disablePadding>
-            <ListItemText primary={name} />
+        {group.members.map(member => (
+          <ListItem key={member.userId} disablePadding>
+            <ListItemText primary={member.name} />
           </ListItem>
         ))}
       </List>
