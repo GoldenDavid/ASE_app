@@ -26,7 +26,6 @@ function GroupArea({ group }) {
         headers: { token: localStorage.getItem("token") }
       }
     )
-    console.log(response)
     try {
       if (response.status === 201) {
         if (response.data.success === true) {
