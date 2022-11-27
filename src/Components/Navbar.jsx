@@ -54,11 +54,9 @@ export default function Navbar() {
     navigate("/login")
   }
   const onSubmit = async values => {
-    console.log(values)
     const response = await axios.put("/api/auth", values, {
       headers: { token: localStorage.getItem("token") }
     })
-    console.log(response)
     try {
       if (response.status === 201) {
         if (response.data.success === true) {

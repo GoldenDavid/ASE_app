@@ -26,7 +26,6 @@ function GroupArea({ group }) {
         headers: { token: localStorage.getItem("token") }
       }
     )
-    console.log(response)
     try {
       if (response.status === 201) {
         if (response.data.success === true) {
@@ -39,7 +38,7 @@ function GroupArea({ group }) {
         }
       }
     } catch (error) {
-      console.log(error.response.data.message)
+      console.error(error.stack)
     }
   }
   const textStyle = { marginTop: "12px" }
