@@ -8,9 +8,3 @@
 .MuiFormHelperText-root {
   color: red !important;
 }
-
-html {
-  background-image: url(../public/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}

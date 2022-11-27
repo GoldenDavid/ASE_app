@@ -52,21 +52,15 @@ function Register() {
     try {
       if (respone.status === 201) {
         if (respone.data.message === "Successfully registered") {
-          setTimeout(() => {
-            props.resetForm()
-            setSuccess("Register successfully, please activation your gmail")
-            setFail("")
-          }).then(() => {
-            props.setSubmitting(false)
-          }, 2000)
+          props.resetForm()
+          setSuccess("Register successfully, please activation your gmail")
+          setFail("")
+          props.setSubmitting(false)
         } else {
-          setTimeout(() => {
-            props.resetForm()
-            setFail(respone.data.message)
-            setSuccess("")
-          }).then(() => {
-            props.setSubmitting(false)
-          }, 2000)
+          props.resetForm()
+          setFail(respone.data.message)
+          setSuccess("")
+          props.setSubmitting(false)
         }
       }
     } catch (error) {
@@ -91,6 +85,7 @@ function Register() {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
+          git
           onSubmit={onSubmit}
         >
           {props => (

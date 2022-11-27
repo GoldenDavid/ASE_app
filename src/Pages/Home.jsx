@@ -1,41 +1,19 @@
-import * as React from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
-import IconButton from "@mui/material/IconButton"
-import MenuIcon from "@mui/icons-material/Menu"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react"
+import Navbar from "../Components/Navbar"
+import Sidebar from "../Components/Sidebar"
+import GroupArea from "../Components/GroupArea"
 
 export default function Home() {
-  const navigate = useNavigate()
-  const handleLogout = () => {
-    localStorage.removeItem("token")
-    localStorage.removeItem("name")
-    navigate("/login")
+  const [group, setGroup] = useState()
+  const handleClickGroupTag = a => {
+    setGroup(a)
   }
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Homepage
-          </Typography>
-          <Button onClick={handleLogout} color="inherit">
-            Logout
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <>
+      <Navbar />
+      <Sidebar handleClickGroupTag={handleClickGroupTag} />
+      {group && <GroupArea group={group} />}
+    </>
   )
 }
