@@ -10,6 +10,7 @@ import Modal from "@mui/material/Modal"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import Alert from "@mui/material/Alert"
+import Divider from "@mui/material/Divider"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as yup from "yup"
 import axios from "../Services/axiosInterceptor"
@@ -55,7 +56,7 @@ export default function Sidebar({ handleClickGroupTag }) {
     p: 4
   }
 
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const [groups, setGroup] = useState([])
@@ -90,19 +91,22 @@ export default function Sidebar({ handleClickGroupTag }) {
       anchor="left"
     >
       <Typography variant="h4" align="center">
-        Group
+        User group
       </Typography>
       <List>
         {groups.map(group => (
-          <ListItem key={group.name} disablePadding>
-            <ListItemButton
-              onClick={() => {
-                handleClickGroupTag(group)
-              }}
-            >
-              <ListItemText primary={group.name} />
-            </ListItemButton>
-          </ListItem>
+          <>
+            <Divider variant="middle" />
+            <ListItem key={group.name} disablePadding>
+              <ListItemButton
+                onClick={() => {
+                  handleClickGroupTag(group)
+                }}
+              >
+                <ListItemText primary={group.name} />
+              </ListItemButton>
+            </ListItem>
+          </>
         ))}
       </List>
       <Button variant="contained" size="medium" onClick={handleOpen}>
@@ -115,7 +119,7 @@ export default function Sidebar({ handleClickGroupTag }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-title" variant="h5" component="h2">
             Group form
           </Typography>
           {success && <Alert severity="success">{success}</Alert>}
@@ -143,6 +147,7 @@ export default function Sidebar({ handleClickGroupTag }) {
                   variant="contained"
                   disabled={props.isSubmitting}
                   style={btnstyle}
+                  onClick={handleClose}
                   fullWidth
                 >
                   {props.isSubmitting ? "Loading" : "Submit"}

@@ -12,12 +12,13 @@ import {
 } from "@mui/material"
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 import Icon from "@mui/material/Icon"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as yup from "yup"
 import axios from "../Services/axiosInterceptor"
 
 function Login() {
+  const params = useParams()
   const navigate = useNavigate()
   const [fail, setFail] = useState("")
   const ggIcon = (
@@ -53,6 +54,13 @@ function Login() {
           localStorage.setItem("token", response.data.token)
           localStorage.setItem("name", response.data.name)
           navigate("/")
+          if (params.groupId) {
+            await axios.patch(
+              "/groups",
+              { groupId: params.groupId },
+              { headers: { token: localStorage.getItem("token") } }
+            )
+          }
         } else {
           setTimeout(() => {
             props.resetForm()
