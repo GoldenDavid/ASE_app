@@ -1,0 +1,126 @@
+.header-top {
+  flex-grow: 0;
+  display: flex;
+  border-bottom: 1px solid rgb(231, 232, 235);
+  padding: 8px;
+  align-items: center;
+}
+.header-top-left {
+  flex-grow: 11;
+}
+.header-top-right {
+  flex-grow: 1;
+}
+
+.header-top-left .back-btn {
+  font-size: 24px;
+  flex-grow: 1;
+  margin-right: 40px;
+}
+
+.header-top-left h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.header-top-left span {
+  float: right;
+}
+
+.header-top-left span p {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.header-top .split {
+  display: inline-block;
+  width: 1px;
+  background-color: rgb(211, 214, 221);
+  height: 40px;
+  margin: 0 40px;
+}
+
+.header-top-right button {
+  background-color: rgb(25, 108, 255);
+  outline: none;
+  border: none;
+  height: 50px;
+  min-width: 140px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 3px;
+  padding: 12px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.header-bottom {
+  flex-grow: 0;
+  padding: 8px;
+  border-bottom: 1px solid rgb(231, 232, 235);
+  align-items: center;
+}
+
+.header-bottom .new-slide-btn {
+  margin-right: 20px;
+}
+.header-bottom button {
+  background-color: rgb(25, 108, 255);
+  outline: none;
+  border: none;
+  height: 50px;
+  min-width: 140px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 3px;
+  padding: 12px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  margin-left: 40px;
+}
+
+.slide-container {
+  flex: 1;
+  background-color: rgb(231, 232, 235);
+  display: flex;
+}
+
+.slide-container ol {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  list-style: none;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  padding-bottom: 0px;
+  background-color: rgb(255, 255, 255);
+}
+
+.slide-container ol {
+  list-style-type: decimal;
+}
+
+.slide-container ol li {
+  height: 120px;
+}
+
+.slide-container ol li:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.slide-container .slide-result {
+  flex: 6;
+}
+
+.slide-container .slide-editor {
+  flex: 2;
+  background-color: rgb(255, 255, 255);
+}
+
+.slide-editor label {
+  display: block;
+}
